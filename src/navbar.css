@@ -1,0 +1,14 @@
+.navbar {
+    position: relative;
+    padding: 10px 0 !important;
+    z-index: 1;
+  }
+  
+  .navbar-nav .nav-item.active > a {
+    color: #4A8BBC !important;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-item a {
+    color: #292929 !important;
+  }

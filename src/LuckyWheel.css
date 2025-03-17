@@ -1,0 +1,200 @@
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Game container */
+.game {
+    margin: 0; 
+    padding: 0;
+    margin-top: -10px;
+    box-sizing: border-box;
+    background-color: #4A82C4;
+}
+
+/* Wheel container */
+.game .wheel-box {
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+    /* margin: 20px auto; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Wheel styling */
+.game .wheel-box #wheel {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* background: url('../../../public/assets/images/Round.png') center center no-repeat; */
+    background-size: 100% 100%;
+    transform-origin: center center;
+    transition: transform 5s cubic-bezier(0.46, 0.03, 0, 0.96);
+}
+
+/* Arrow styling */
+.game .wheel-box #arrow {
+    width: 60%;
+    height: 25%;
+    position: absolute;
+    top: -90px;
+    left: -50px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    /* background: url('../../../public/assets/images/Arrow.png') center center no-repeat; */
+    background-size: contain;
+    cursor: pointer;
+}
+
+/* Draw chances counter */
+.game .luckDrawCount {
+    text-align: center;
+    color: #fff;
+    font-size: 26px;
+    margin-top: 10px;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Modal content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalPop 0.3s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalPop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Close button in modal */
+.close {
+    cursor: pointer;
+    font-size: 24px;
+    float: right;
+    color: #333;
+}
+
+/* Modal message text */
+.modal-message {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #333;
+    word-break: break-word;
+}
+
+/* Modal button */
+.modal-button {
+    background: #4A82C4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.modal-button:hover {
+    background: #3a6a9c;
+}
+
+/* Wheel inner container */
+.wheel-inner {
+    position: absolute;
+    width: 83%;
+    height: 83%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Prize sector styling */
+.prize-part {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform-origin: left center;
+    box-sizing: border-box;
+}
+
+.prize-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.prize-text {
+    transform: translate(0, -50%) rotate(0deg);
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 47%;
+    left: 15%;
+    font-size: 24px;
+    font-weight: 500;
+    padding-top: 0.3rem;
+    box-sizing: border-box;
+    white-space: pre;
+    z-index: 1;
+}
+
+/* Responsive text sizing */
+@media screen and (max-width: 768px) {
+    .prize-text {
+        font-size: 18px;
+    }
+    
+    .game .luckDrawCount {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .prize-text {
+        font-size: 14px;
+    }
+    
+    .game .luckDrawCount {
+        font-size: 18px;
+    }
+    
+    .modal-message {
+        font-size: 16px;
+    }
+}
